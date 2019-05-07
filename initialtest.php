@@ -19,6 +19,20 @@
     
     <div class="container mt-5">
         <!-- SECTIONS -->
+        <h1>Test: Initialisation and Configuration</h1>
+        <p>
+        Test Session Variable = This message is stored in a session variable <br>
+        Base URL =http://whoopdedoo_org_uk/int/support/development/webapp/ <br>
+        Database Configuration Details <br>
+        Array <br>
+        ( <br>
+            [hostname] => localhost <br>
+            [username] => user <br>
+            [password] => secretpassword <br>
+            [database] => db name <br>
+            [dbdriver] => mysql <br>
+        ) <br>
+        </p>
     </div>
 </body>
 </html>
