@@ -26,3 +26,7 @@
 .each_item_right_quantity {
     color: #666;
 }
+
+.edit_button {
+    padding: 0px 5px;
+}

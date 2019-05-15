@@ -40,6 +40,19 @@
             $log = "Update Failed";
         }
     }
+
+    // DELETE DATA
+    if(isset($_GET['delete_id'])) {
+        $delete_id = $_GET['delete_id'];
+
+        $sql = "DELETE FROM tbl_items WHERE item_id = '$delete_id'";
+        if($con->query($sql) === TRUE) {
+            $log = "Deleted";
+            header("Location: databasetest.php");
+        } else {
+            $log = "Delete Failed";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -187,7 +200,17 @@
                                         if(!isset($_GET['edit'])) {
                                             ?>
                                                 <div class="edit_button">
-                                                    <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . "?edit=true&id=" . $item_id; ?>">Edit</a>
+                                                    <a class="btn btn-outline-primary" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . "?edit=true&id=" . $item_id; ?>">Edit</a>
+                                                </div>
+                                            <?php
+                                        }
+                                    ?>
+
+                                    <?php 
+                                        if(!isset($_GET['edit'])) {
+                                            ?>
+                                                <div class="edit_button">
+                                                    <a class="btn btn-outline-danger" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . "?delete_id=" . $item_id; ?>">Delete</a>
                                                 </div>
                                             <?php
                                         }
