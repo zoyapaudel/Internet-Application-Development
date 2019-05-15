@@ -1,0 +1,28 @@
+/* DISPLAY */
+.each_item {
+    background: #FFF;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    border-radius: 4px;
+    margin: 25px 0px;
+    display: flex;
+    padding: 20px;
+}
+
+.each_item_left {
+}
+
+.each_item_right {
+    flex: 1;
+    padding: 10px 20px;
+}
+
+.each_item_right_name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #444;
+}
+
+.each_item_right_quantity {
+    color: #666;
+}
