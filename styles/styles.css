@@ -9,24 +9,21 @@
     padding: 20px;
 }
 
-.each_item_left {
-}
-
-.each_item_right {
+.each_item .each_item_right {
     flex: 1;
     padding: 10px 20px;
 }
 
-.each_item_right_name {
+.each_item .each_item_right .each_item_right_name {
     font-weight: bold;
     font-size: 20px;
     color: #444;
 }
 
-.each_item_right_quantity {
+.each_item .each_item_right .each_item_right_quantity {
     color: #666;
 }
 
-.edit_button {
+.each_item .edit_button {
     padding: 0px 5px;
 }
