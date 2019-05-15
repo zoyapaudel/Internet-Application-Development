@@ -69,12 +69,12 @@
 
             echo "<p>a. Age of someone born 20th October 1994 = " . findAge("20th October 1994") . "</p>";
 
-            function sanitize($string) {
-                $string = html_entity_decode();
-                return $string;
-            }
+            // function sanitize($string) {
+            //     $string = html_entity_decode();
+            //     return $string;
+            // }
 
-            echo "<p>b. Bad String = ". sanitize('A quote is "bold"') ."</p>";
+            // echo "<p>b. Bad String = ". sanitize('A quote is "bold"') ."</p>";
         ?>
     </div>
 </body>
