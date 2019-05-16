@@ -30,9 +30,26 @@
 
 /* COLLECTION APPLICATION */
 .collection_each {
-    background: #e1e1e1;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
+
+.collection_each:nth-child(even) {background: #f8f8f8;}
+.collection_each:nth-child(odd) {background: #f1f1f1;}
+
+.collection_each.title {
+    background: #39F;
+    font-weight: bold;
+    color: white;
+}
+
+.collection_each:not(.title):hover {
+    background: #E9E9E9;
+}
+
 
 .collection_each .collection_each_name {
     flex: 1;

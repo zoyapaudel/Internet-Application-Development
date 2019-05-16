@@ -1,4 +1,6 @@
 <?php 
+    session_start();
+
     // IMPORT CONNECTION
     include("connection.php");
 
@@ -31,15 +33,46 @@
         <div id="display_items">
             <h5>Items from the database:</h5>
 
-            <div class="collection_each">
+            <!-- HEADER -->
+            <div class="collection_each title">
                 <div class="collection_each_name">ITEM NAME</div>
                 <div class="collection_each_quantity">QUANTITY</div>
             </div>
 
-            <div class="collection_each">
-                <div class="collection_each_name">Dipesh Rai</div>
-                <div class="collection_each_quantity">10</div>
-            </div>
+            <?php 
+                $sql = "SELECT * FROM tbl_items ORDER BY item_id DESC";
+
+                $result = $con->query($sql);
+
+                if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $item_id = $row['item_id'];
+                        $item_name = $row['item_name'];
+                        $item_quantity = $row['item_quantity'];
+
+                        ?>
+                            <div class="collection_each" onclick="location.href = 'displayItem.php?id=<?php echo $item_id; ?>'">
+                                <div class="collection_each_name"><?php echo $item_name; ?></div>
+                                <div class="collection_each_quantity"><?php echo $item_quantity; ?></div>
+                            </div>
+                        <?php
+                    }
+                }
+            ?>
+        </div>
+
+        <div id="collection_items" style="margin-top: 50px;">
+            <h5>Collection List:</h5>
+
+            <?php 
+                if(empty($_SESSION['items'])) {
+                    ?>
+                        <div>No items in the collection.</div>
+                    <?php
+                } else {
+                    echo "Items in the collection";
+                }
+            ?>
         </div>
     </div>
 </body>
