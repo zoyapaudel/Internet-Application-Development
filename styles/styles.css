@@ -29,3 +29,19 @@
 }
 
 /* COLLECTION APPLICATION */
+.collection_each {
+    background: #e1e1e1;
+    display: flex;
+}
+
+.collection_each .collection_each_name {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.collection_each .collection_each_quantity {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
