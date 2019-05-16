@@ -65,12 +65,35 @@
             <h5>Collection List:</h5>
 
             <?php 
-                if(empty($_SESSION['items'])) {
+                if(empty($_SESSION['collectionlist'])) {
                     ?>
                         <div>No items in the collection.</div>
                     <?php
                 } else {
-                    echo "Items in the collection";
+                    foreach($_SESSION['collectionlist'] as $value) {
+                        
+                        $value_id = $value;
+
+                        $sql = "SELECT * FROM tbl_items WHERE item_id = '$value_id'";
+
+                        $result = $con->query($sql);
+                        if($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+
+                            $item_name = $row['item_name'];
+                            $item_quantity = $row['item_quantity'];
+                        }
+
+                        ?>
+                            <div class="session_collection_each">
+                                <div class="session_collection_each_name"><?php echo $item_name; ?></div>
+                                <div class="session_collection_each_quantity"><?php echo $item_quantity; ?></div>
+                                <div class="session_collection_each_button">
+                                    <button class="btn btn-outline-danger">Remove</button>
+                                </div>
+                            </div>
+                        <?php
+                    }
                 }
             ?>
         </div>

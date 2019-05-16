@@ -1,16 +1,20 @@
 <?php 
     session_start();
-
-    print_r(@$_SESSION['collectionlist']);
-
+    
     // IMPORT CONNECTION
     include("connection.php");
 
     // GET THE ADD TO COLLECTION DATA
+    $collection_array = array();
     if(isset($_POST['submit'])) {
         $item_id = $_POST['item_id'];
 
-        $collection_array = array($item_id);
+        if(isset($_SESSION['collectionlist'])) {
+            $collection_array = $_SESSION['collectionlist'];
+            array_push($collection_array, $item_id);
+        } else {
+            array_push($collection_array, $item_id);
+        }
 
         $_SESSION['collectionlist'] = $collection_array;
     }
