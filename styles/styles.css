@@ -62,3 +62,42 @@
     padding: 10px;
     text-align: center;
 }
+
+/* SESSION COLLECTION APPLICATION */
+.session_collection_each {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.session_collection_each:nth-child(even) {background: #f8f8f8;}
+.session_collection_each:nth-child(odd) {background: #f1f1f1;}
+
+.session_collection_each.title {
+    background: #39F;
+    font-weight: bold;
+    color: white;
+}
+
+.session_collection_each:not(.title):hover {
+    background: #E9E9E9;
+}
+
+
+.session_collection_each .session_collection_each_name {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.session_collection_each .session_collection_each_quantity {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.session_collection_each .session_collection_each_button {
+    padding: 10px;
+}
