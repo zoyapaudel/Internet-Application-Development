@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    
+
     // IMPORT CONNECTION
     include("connection.php");
 
@@ -17,6 +17,8 @@
         }
 
         $_SESSION['collectionlist'] = $collection_array;
+
+        header("Location: collectionapplication.php");
     }
 
 ?>

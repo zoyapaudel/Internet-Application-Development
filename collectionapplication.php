@@ -4,6 +4,13 @@
     // IMPORT CONNECTION
     include("connection.php");
 
+    if(isset($_POST['submit'])) {
+        $remove_item_index = $_POST['remove_item'];
+
+        unset($_SESSION['collectionlist'][$remove_item_index]);
+
+        header("Location: collectionapplication.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +77,7 @@
                         <div>No items in the collection.</div>
                     <?php
                 } else {
-                    foreach($_SESSION['collectionlist'] as $value) {
+                    foreach($_SESSION['collectionlist'] as $key => $value) {
                         
                         $value_id = $value;
 
@@ -89,7 +96,10 @@
                                 <div class="session_collection_each_name"><?php echo $item_name; ?></div>
                                 <div class="session_collection_each_quantity"><?php echo $item_quantity; ?></div>
                                 <div class="session_collection_each_button">
-                                    <button class="btn btn-outline-danger">Remove</button>
+                                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                                        <input type="hidden" name="remove_item" value="<?php echo $key; ?>">
+                                        <input type="submit" class="btn btn-outline-danger" name="submit" value="Remove">
+                                    </form>
                                 </div>
                             </div>
                         <?php
