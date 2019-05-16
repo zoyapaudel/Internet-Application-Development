@@ -1,9 +1,3 @@
-<?php 
-    // IMPORT CONNECTION
-    include("connection.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Internet Application Development | Collection Application</title>
     <link rel="stylesheet" href="./styles/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/styles.css">
     <script src="./scripts/bootstrap.min.js"></script>
 </head>
 <body>
@@ -26,14 +19,7 @@
     
     <div class="container mt-5">
         <!-- SECTIONS -->
-        <h1>Collection : Application</h1>
-
-        <div id="display_items">
-            <div class="collection_each">
-                <div class="collection_each_name">Dipesh Rai</div>
-                <div class="collection_each_quantity">10</div>
-            </div>
-        </div>
+        <h1>Add to the collection</h1>
     </div>
 </body>
 </html>
